@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css6.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js6.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="ajax6.js"></script>
+    <title>Xe hay hay</title>
+</head>
+<body>
+    <div class="header col-sm-12">
+        <div class="search-box">
+            <form class="form-inline">
+            <input class="form-control mr-sm-1" type="search" placeholder="Nhập tin tức cần tìm..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="callAPI()">Tìm kiếm</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="left-sidebar col-sm-2">
+            <div class="list-group action-list" id="sidebar">
+                <a href="#" class="list-group-item list-group-item-action active">
+                  Danh mục
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">Trang chủ</a>
+                <a href="#" class="list-group-item list-group-item-action">Tin tức</a>
+                <a href="#" class="list-group-item list-group-item-action">Đánh giá xe</a>
+                <a href="#" class="list-group-item list-group-item-action">Tư vấn</a>
+                <a href="#" class="list-group-item list-group-item-action">Sản phẩm đã đặt</a>
+            </div>
+            <div class="adding-list-item list-group-item" id="addItemsidebar">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="New item..." name="add">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="callAPI()">Add</button>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+        <div class="main-page col-sm-10">
+          <h3 class="title">Xe Oto</h3>
+            <div class="card-row">
+                <div class="card-box">
+                    <div class="card" id="item-1" style="width: 18rem;">
+                        <img class="card-img-top" src="https://giaxeoto.vn/admin/upload/images/resize/640-acura-nsx-ra-mat.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Honda Acura NSX Type R</h5>
+                          <p class="card-text">Acura NSX (hay Honda NSX) là dòng xe thể thao cỡ trung (mid-engine sports car), 2 cửa tiêu biểu của Acura. Acura NSX (hay Honda NSX) là dòng xe thể thao cỡ trung (mid-engine sports car), 2 cửa tiêu biểu của Acura.</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 1)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 1)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 1)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 1)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 1)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card" id="item-2" style="width: 18rem;">
+                        <img class="card-img-top" src="https://cdnmedia.baotintuc.vn/Upload/G5r0l6AdtRt8AnPUeQGMA/files/2021/05/2605/2605-Lamborghini-1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Lamborghini</h5>
+                          <p class="card-text">Hãng xe luôn mang đến cho khách hàng những dòng xe chất lượng với nhiều chương trình khuyến mãi hấp dẫn.Hãng xe luôn mang đến cho khách hàng những dòng xe chất lượng với nhiều chương trình khuyến mãi hấp dẫn</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 2)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 2)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 2)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 2)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 2)">Orange</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('green', 2)">Green</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('greenyellow', 2)">Greenyellow</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card" id="item-3" style="width: 18rem;">
+                        <img class="card-img-top" src="https://xehay.vn/uploads/images/2020/4/3/Xehay-ANTD-BTS-220420-15.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Bugatti Chiron</h5>
+                          <p class="card-text">Chiếc xe này được trang bị động cơ W16 8.0L với công suất lên đến 1500 mã lực...</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 3)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 3)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 3)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 3)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 3)">Orange</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('blue', 3)">Blue</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card-box">
+                    <div class="card" id="item-4" style="width: 18rem;">
+                        <img class="card-img-top" src="https://image-us.24h.com.vn/upload/3-2020/images/2020-08-01/Sieu-xe-Mercedes-Benz-AMG-GT-chinh-thuc-ra-mat-di-kem-mot-so-nang-cap-moi-8--4--1596295433-288-width660height440.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Mercedes-Benz AMG GT</h5>
+                          <p class="card-text">Siêu xe Mercedes-Benz AMG GT chính thức ra mắt, đi kèm một số nâng cấp mới</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('black', 4)">Black</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 4)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 4)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 4)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 4)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 4)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card" id="item-5" style="width: 18rem;">
+                        <img class="card-img-top" src="https://auto5.vn/files/duynguyen/2021/07/29/0-174016.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Rolls-Royce Ghost</h5>
+                          <p class="card-text">Rolls-Royce Ghost lột xác với phiên bản Carbon khi "qua tay" Mansory.</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 5)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 5)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 5)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 5)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 5)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card" id="item-6" style="width: 18rem;">
+                        <img class="card-img-top" src="https://photo-cms-plo.zadn.vn/w800/Uploaded/2021/tmuihk/2020_06_27/honda-civic_mhwp.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Honda Civic</h5>
+                          <p class="card-text">Civic 2021 là phiên bản facelift sở hữu nhiều chi tiết nâng cấp đầy tinh tế về ngoại hình.</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 6)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 6)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 6)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 6)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 6)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-row">
+                <div class="card-box">
+                    <div class="card" id="item-7" style="width: 18rem;">
+                        <img class="card-img-top" src="https://img.tinbanxe.vn/images/Acura/acura-rlx/mau-sac/acura-rlx-mau-do-tinbanxe.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Acura RLX</h5>
+                          <p class="card-text">Acura RLX 2021 là mẫu xe hạng sang cỡ nhỏ với rất nhiều những tính năng cao cấp bậc nhất...</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 7)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 7)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 7)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 7)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 7)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card" id="item-8" style="width: 18rem;">
+                        <img class="card-img-top" src="https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2022/performance/corvette/01-images/mov/intro/2022-corvette-intro-01.jpg?imwidth=960" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">2022 Chevrolet Corvette Stingray</h5>
+                          <p class="card-text">Chevrolet nâng cấp Corvette Stingray 2022 cùng phiên bản đặc biệt.</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 8)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 8)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 8)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 8)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 8)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="card" id="item-9" style="width: 18rem;">
+                        <img class="card-img-top" src="https://static.carmudi.vn/wp-content/uploads/2020-02/z0daLE5BuD.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Kia K7 2020</h5>
+                          <p class="card-text">Kia chính thức ra mắt K7 2020, đối đầu 2 cái tên sang Audi A6 và Mercedes E-Class.</p>
+                          <div class="dropdown color-select">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Choose color
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" onclick="changeColor('while', 9)">White</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gray', 9)">Gray</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('red', 9)">Red</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('gold', 9)">Gold</a>
+                              <a class="dropdown-item" href="#" onclick="changeColor('orange', 9)">Orange</a>
+                            </div>
+                          </div>
+                          <a href="#" class="btn btn-primary">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="border: 1px gray solid">
+            <h3 class="title">Xe Moto</h3>
+            <div class="card-row">
+              <div class="card-box">
+                <div class="card" id="item-10" style="width: 18rem;">
+                    <img class="card-img-top" src="https://img.tinxe.vn/crop/620x324/2020/01/02/XForF7yt/ducati-panigale-v4-63ee-fa55.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Ducati 2021</h5>
+                      <p class="card-text">Ducati là một trong những thương hiệu mô tô nổi tiếng đầu tiên được phân phối chính thức tại Việt Nam.</p>
+                      <div class="dropdown color-select">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Choose color
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#" onclick="changeColor('while', 10)">White</a>
+                          <a class="dropdown-item" href="#" onclick="changeColor('gray', 10)">Gray</a>
+                          <a class="dropdown-item" href="#" onclick="changeColor('red', 10)">Red</a>
+                          <a class="dropdown-item" href="#" onclick="changeColor('gold', 10)">Gold</a>
+                          <a class="dropdown-item" href="#" onclick="changeColor('orange', 10)">Orange</a>
+                        </div>
+                      </div>
+                      <a href="#" class="btn btn-primary">Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-box">
+              <div class="card" id="item-11" style="width: 18rem;">
+                  <img class="card-img-top" src="https://imgwebikevn-8743.kxcdn.com/oQE7B0fi9fFGd06eK5EwGmAgG94=/cnews/2017/06/19/9349636aed3d620b97096e69b46ed142.jpeg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">BMW S1000RR</h5>
+                    <p class="card-text">Chiếc siêu môtô BMW S1000RR đã khủng với giá trị cao cùng động cơ mạnh mẽ...</p>
+                    <div class="dropdown color-select">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose color
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="changeColor('while', 11)">White</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('gray', 11)">Gray</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('red', 11)">Red</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('gold', 11)">Gold</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('orange', 11)">Orange</a>
+                      </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Order</a>
+                  </div>
+              </div>
+            </div>
+            <div class="card-box">
+              <div class="card" id="item-12" style="width: 18rem;">
+                  <img class="card-img-top" src="https://i.vietgiaitri.com/2019/6/24/ngam-sieu-mo-to-kawasaki-ninja-zx-6r-2019-sap-ve-viet-nam-5ced36.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Kawasaki Ninja ZX-6R</h5>
+                    <p class="card-text">Kawasaki ZX-6R 2019 mới đây đã được công ty Motorrock phân phối chính thức tại Việt Nam...</p>
+                    <div class="dropdown color-select">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choose color
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="changeColor('while', 12)">White</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('gray', 12)">Gray</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('red', 12)">Red</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('gold', 12)">Gold</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('orange', 12)">Orange</a>
+                        <a class="dropdown-item" href="#" onclick="changeColor('greenyellow', 12)">Greenyellow</a>
+                      </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Order</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="footer col-sm-12">Footer</div>
+</body>
+</html>
